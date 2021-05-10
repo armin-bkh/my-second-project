@@ -1,0 +1,524 @@
+.hambergure-menu-icon{
+    @include dis-flex(column);
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 9.5%;
+    right: 5%;
+    z-index: 100000000000;
+    cursor: pointer;
+    @media only screen and (max-width:900px){
+        top: 8.5%;
+    }
+    &-line{
+        background-color: $color-primary;
+        width: 100%;
+        height: 5px;
+        box-shadow: 0 0 5px rgba($bg-color,1);
+
+        @media only screen and (max-width:750px) {
+            height: 4px;
+        }
+
+        @media only screen and (max-width:500px) {
+            height: 3px;
+        }
+    }
+
+    @media only screen and (max-width:750px) {
+        width: 35px;
+        height: 35px;
+    }
+
+    @media only screen and (max-width:500px) {
+        width: 30px;
+        height: 30px;
+    }
+}
+.check ~ .menu{
+    .hambergure-menu-icon{
+    transition: all .8s ease;
+}
+}
+.check:checked ~ .menu{
+    .hambergure-menu-icon{
+        transition: all .8s ease;
+        transform: rotate(90deg);
+    .line2{
+        opacity: 0;
+}
+    .line1{
+        transition: transform .8s ease;
+        transform: rotate(45deg);
+        transform-origin: left;
+    }
+    .line3{
+        transition: transform .8s ease;
+        transform-origin: left;
+        transform: rotate(-45deg);
+    }
+}
+}
+.menu{
+    .hambergure-menu-icon{
+.line1,.line3{
+    transition: all .8s ease;
+}
+}
+}
+.hambergure-menu-left , .hambergure-menu-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50.5%;
+    position: fixed;
+}
+.hambergure-menu-left{
+    z-index: 1000000000000000;
+    background-color: $bg-menu-left;
+    height: 100vh;
+    left: -55.5%;
+    transition: left 1s ease;
+    .nav-bar{
+        transform: translate(-12%,15%);
+        width: 100%;
+        height:100%;
+        @include dis-flex(column);
+        .navbar-img{
+            width: 30%;
+            height: 28%;
+            border-radius: 15px;
+            opacity: .4;
+            box-shadow: 0 0 15px rgba($color-black,.8);
+            cursor: pointer;
+        }
+        .img1{
+            box-shadow: -5px -5px 5px rgba($color-black,1);
+        }
+        .img2{
+            position: relative;
+            left: 10%;
+            top: -15%;
+            opacity: .8;
+         }
+         .img3{
+            position: relative;
+            left: 20%;
+            top: -25%;
+            box-shadow: 5px 5px 5px rgba($color-black,1);
+         }
+    }
+}
+.hambergure-menu-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 1s ease;
+    z-index: 10000000000000000000000;
+    background-color: $bg-menu-right;
+    height: 100vh;
+    right: -55.5%;
+    @media only screen and (max-width:800px){
+        right: -100%;
+        width: 100%;
+    }
+    .menu-right{
+        width: 40%;
+        list-style-type: none;
+
+        @media only screen and (max-width:800px){
+            width: 100%;
+            text-align: center;
+            &-item{
+            &:nth-child(2),&:nth-child(3){
+                margin-right: 24px;
+                .fa-spoon{
+                    margin-right: 12px;
+                } 
+            }
+            }
+        }
+        @media only screen and (max-width:520px){
+            font-size: 5vw;
+            &-item{
+                &:nth-child(2),&:nth-child(3){
+                    margin-right: 21px;     
+                }                          
+        }
+        }
+        &-item{
+            margin-top: 40px;
+            a{
+                font-family: $sahel;
+                color: $color-secondary;
+                font-size: 3vw;
+                padding: 15px;
+                text-decoration: none;
+                transition: all .7s ease;
+
+                &:hover{    
+                    color: $color-primary;
+                    letter-spacing: 3px;
+                }
+            }
+            .last-li{
+                margin-right: 20px;
+            }
+            i{
+                color: $color-primary;
+                font-size: 3vw;
+                cursor: pointer;
+            }
+            .fa-spoon{
+                transform: translateX(-12px);
+            }
+        }
+    }
+}
+
+.check:checked ~ .hambergure-menu-left{
+    transition: left 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: $bg-menu-left;
+    z-index: 1000000000000000;
+
+    @media only screen and (max-width:800px){
+        left: -50%;
+    }
+}
+
+.check:checked ~ .hambergure-menu-right{
+    transition: right 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: $bg-menu-right;
+    z-index: 100000000000000;
+}
+
+
+
+.header{
+    z-index: 1000;
+    @include dis-flex(column);
+    background: linear-gradient( to bottom ,rgba($color-black,.8),rgba($color-black,.6)) , url('../images/bg.jpeg') center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    &-name{
+        padding-top: 2%;
+        @include dis-flex(row-reverse);
+        width: 100%;
+        height: 20%;
+    
+    &-icon{
+        padding-right: 15px;
+        margin-top: 10px;
+        a{
+            text-decoration: none;
+            color: $color-primary;
+            font-size: 5vw;
+            i{
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                border: 3px solid $color-primary;
+                border-radius: 50%;
+
+                @media only screen and (max-width:500px){
+                    font-size: 7vw;
+                }
+            }
+        }
+    }
+}
+    &-name-text{
+        text-align: center;
+        color: $color-secondary;
+        font-family: $sahel;
+        &-top{
+            font-size: 4vw;
+
+            @media only screen and (max-width:500px){
+                font-size: 5vw;
+            }
+        }
+        &-bottom{
+            opacity: .8;
+            font-size: 1.5vw;
+            color: $color-primary;
+            .fa-star{
+                margin-left: 1px;
+                &:nth-child(1){
+                    transform: translateY(4px);
+                }
+                &:nth-child(2){
+                    transform: translateY(-4px);
+                }
+                &:nth-child(3){
+                    transform: translateY(-8px);
+                }
+                &:nth-child(4){
+                    transform: translateY(-4px);
+                }
+                &:nth-child(5){
+                    transform: translateY(4px);
+                }
+            }
+            @media only screen and (max-width:500px){
+                font-size: 3vw;
+            }
+        }
+    }
+    &-more{
+        transform: translateY(-5%);
+        @include dis-flex(column);
+        justify-content: space-evenly;
+        width: 100%;
+        height: 80%;
+        .wellcome{
+            color: $color-primary;
+            font-size: 7vw;
+            font-family: $nastaliq;
+            word-spacing: 1vw;
+
+            @media only screen and (max-width:500px){
+                font-size: 12vw;
+            }
+        }
+        .taste-foods{
+            color:$color-secondary;
+            font-size: 3vw;
+            font-family: $sahel;
+            transform: translateY(-50%);
+            word-spacing: 3px;
+            font-weight: bold;
+            letter-spacing: 5px;
+
+            @media only screen and (max-width:500px){
+                font-size: 4.5vw;
+            }
+        }
+    }
+}
+
+
+.about-us{
+    padding: 30px;
+    width: 100%;
+    height: 100vh;
+    @include dis-flex(row-reverse);
+
+    @media only screen and (min-width:1235px){
+        height: 110vh;
+    }
+    &-left{
+        width: 50%;
+
+        @media only screen and (max-width:800px){
+            display: none;
+        }
+        &-img{
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+        }
+    }
+    &-right{
+        height: 100%;
+        width: 50%;
+        @include dis-flex(column);
+        justify-content: space-around;
+
+        @media only screen and (max-width:800px){
+            width: 100%;
+        }
+        &-header{
+            color: $color-primary;
+            font-size: 6vw;
+            font-family: $nastaliq;
+
+            @media only screen and (max-width:800px){
+                font-size: 8vw;
+            }
+        }
+        &-title{
+            color: $color-secondary;
+            font-size: 2.5vw;
+            font-family: $sahel;
+            letter-spacing: 4px;
+
+            @media only screen and (max-width:800px){
+                font-size: 4vw;
+            }
+        }
+        &-stars{
+            color: $color-primary;
+            margin: 10px 0;
+            .fa{
+                margin: 0 3px;
+
+                @media only screen and (max-width:565px){
+                    font-size: 2vw;
+                }
+            }
+        }
+        &-text{
+            word-spacing: 1px;
+            color: $color-secondary;
+            font-size: 1.8vw;
+            font-family: $nastaliq;
+            text-align: justify;
+            text-indent: 5%;
+
+            @media only screen and (max-width:800px){
+                font-size: 3vw;
+            }
+
+            @media only screen and (max-width:550px) {
+                font-size: 2.2vw;
+                font-family: $sahel;
+            }
+        }
+    }
+}
+
+
+.reservation-food{
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    height: 55vw;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap row;
+
+    @media only screen and (max-width:800px){
+        height: 70vw;
+    }
+    
+    &-card{
+        z-index: 10000000;
+        overflow: hidden;
+        position: relative;
+        width: 33.3333%;
+        &-imgs{
+            z-index: -1;
+            opacity: .7;
+            width: 100%;
+            height: 100%;
+        }     
+        &:hover{
+            .reservation-food-card-form{
+                left: 0;
+            }
+        }  
+        &-form{
+            display: flex;
+            flex-flow: wrap column;
+            align-items: center;
+            justify-content: space-evenly;
+            z-index: 10000;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color-primary,.7);
+            position: absolute;
+            transition: left .8s ease;
+            &-header{
+                bottom: 5%;
+                position: relative;
+                color: $color-white;
+                font-size: 5vw;
+                font-family: $nastaliq;
+
+                @media only screen and (max-width:670px){
+                    font-size: 4vw;
+                }
+                @media only screen and (max-width:550px){
+                    font-size: 6vw;
+                }
+            }
+            &-title{
+                bottom: 8%;
+                position: relative;
+                color: $color-white;
+                font-size: 1.5vw;
+                font-family: $sahel;
+
+                @media only screen and (max-width:670px){
+                    font-size: 2.5vw;
+                }
+                @media only screen and (max-width:550px){
+                    font-size: 2.8vw;
+                }
+            }
+        }
+    }
+}
+
+
+.footer-header{
+    height: 65vh;
+    @include dis-flex(column);
+    justify-content: space-around;
+    position: relative;
+
+    @media only screen and (max-width:700px){
+        height: 60vh;
+    }
+    .header-name{
+        padding-top: 0;
+    }
+    &-addreses{
+        z-index: 10000;
+        ul{
+            @include dis-flex(row);
+            list-style-type: none;
+            li{
+                margin: 0 20px;
+                a{
+                    transition: color .6s ease;
+                    color: $color-secondary;
+                    &:hover{
+                        color: $color-primary;
+                    }
+                    i{
+                        font-size: 4vw;
+
+                        @media only screen and (max-width:550px){
+                            font-size: 6vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        opacity: 1;
+        font-family: $sahel;
+        color: $color-secondary;
+        text-shadow: 0 0 3px $bg-color;
+        font-size: 1.5vw;
+        z-index: 2;
+
+        @media only screen and (max-width:750px){
+            font-size: 3vw;
+        }
+    }
+    .wave-2{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+}

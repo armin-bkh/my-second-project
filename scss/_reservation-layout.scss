@@ -1,0 +1,238 @@
+.bg-reservation-page {
+    background: linear-gradient( to bottom ,rgba($color-black,.8),rgba($color-black,.6)) , url('../images/reservation-bg.jpg') center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.reservation-header {
+    height: 20vh;
+    .h-reservation {
+        height: 100%;
+    }
+}
+
+.reservation-form{
+    @include dis-flex(row);
+    width: 100%;
+    height: 85vh;
+    &-sidebar{
+        width: 20%;
+        height: 100%;
+
+        @media only screen and (max-width:650px){
+            display: none;
+        }
+        img{
+            width: 120%;
+            height: 170%;
+            opacity: .6;
+            margin-right: 10%;
+        }
+    }
+    &-center{
+        width:80%;
+        height: 100%;
+
+        @media only screen and (max-width:650px){
+            width: 100%;
+        }
+
+        @include dis-flex(row);
+        &-form{
+            margin-top: 1.5%;
+            border: 2px dashed $color-primary;
+            width: 80%;
+            height: 90%;
+            backdrop-filter: blur(5px);
+            border-radius: 1em 3em 1em;
+            background: rgba($bg-color,.2);
+            box-shadow: 10px 10px 15px rgba($color-primary,.7),
+            -10px -10px 15px rgba($color-secondary,.7);
+            &-reserv{
+                width: 100%;
+                height: 100%;
+                @include dis-flex(column);
+
+                .toggle-container{
+                    width: 50%;
+                    @include dis-flex(row);
+                    justify-content: space-between;
+                    margin-top: 3vh;
+                    @media only screen and (max-width:800px) {
+                        width: 85%;
+                    }
+                }
+                .toggle-reserve{
+                    font-family: $sahel;
+                    font-size: 1.3vw;
+                    display: inline-block;
+                    color: $color-secondary;
+                    @media only screen and (max-width:800px) {
+                        font-size: 1.8vw;
+                    }
+                    @media only screen and (max-width:650px){
+                        font-size: 2.3vw;
+                    }
+                    @media only screen and (max-width:500px){
+                        font-size: 3vw;
+                    }
+                }
+                .label{
+                    display: inline-flex;
+                    align-items: center;
+                    cursor: pointer;
+                    color: #394a56;
+                }
+                .toggle{
+                    margin-right: auto;
+                    isolation: isolate;
+                    position: relative;
+                    height: 30px;
+                    width: 60px;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 0 5px rgba($bg-color,1),
+                    2px 3px 5px rgba($color-black,.4),
+                    inset 0 0 5px rgba($bg-color,1),
+                    inset 0 0 5px rgba($color-black,1),
+                   inset 2px 3px 5px rgba($color-black,.9);
+                   background-color: $bg-menu-right;
+                   @media only screen and (max-width:550px){
+                    height: 20px;
+                    width: 40px;
+                }
+                @media only screen and (max-width:450px){
+                    height: 15px;
+                    width: 25px;
+                }
+                }
+                .indicator{
+                    height: 100%;
+                    width: 100%;
+                    background: $color-primary-2;
+                    border-radius: 15px;
+                    transform: translate3d(-50%, 0, 0);
+                    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+                    box-shadow: 1px 4px 5px rgba($color-black,.8);
+                }
+                .toggle-state{
+                    display: none;
+                }
+                .toggle-state:checked ~ .indicator{
+                    transform: translate3d(49%,0,0);
+                    background-color:$color-primary;
+                    box-shadow: -1px -3px 5px rgba($color-black,.8);
+                }
+                .input-container{
+                    margin-top: 2vh;
+                    @media only screen and (max-width:500px){
+                        @include dis-flex(column);
+                        margin-top: 0;
+                    }
+                }
+                input[type=text],input[type=password],input[type=email]{
+                    font-family: $sahel;
+                    font-size: 1vw;
+                    outline: none;
+                    background: $bg-menu-right;
+                    border-radius: 10px;
+                    border: none;
+                    border-bottom: 1px solid $color-primary;
+                    margin: 5px;
+                    padding: 10px 30px;
+                    color: $color-secondary;
+                    box-shadow:inset 1px 2px 5px rgba($color-black,.9),
+                    inset 3px 4px 5px rgba($color-black,.5),
+                    inset -3px -4px 5px rgba($color-black,.7),
+                    inset -1px -2px 5px rgba($color-black,.3); 
+
+                    @media only screen and (max-width:800px) {
+                        font-size: 1.5vw;
+                    }
+                    @media only screen and (max-width:650px){
+                        font-size: 2vw;
+                    }
+                    @media only screen and (max-width:500px){
+                        font-size: 2.6vw;
+                    }
+                }                  
+            }
+        }
+        &-money{
+            margin-top: 4vh;
+            width: 50%;
+            color: $color-secondary;
+            font-size: 2vw;
+            @media only screen and (max-width:800px) {
+                font-size: 2.5vw;
+                width: 85%;
+            }
+            @media only screen and (max-width:650px){
+                font-size: 3vw;
+            }
+            @media only screen and (max-width:500px){
+                font-size: 3.6vw;
+            }
+        }
+        .btn-for-reservation-page{
+            margin-top: 3vh;
+        }
+        .reservation-form-header{
+            font-family: $nastaliq;
+            font-size: 3.5vw;
+            color: $color-primary;
+            word-spacing: .5vw;
+        }
+    }
+    
+}
+
+.footer-3{
+    @include dis-flex(column);
+    justify-content: space-around;
+    position: relative;
+    height: 65vh;
+    .wave-2{
+        position: absolute;
+        bottom: 0;
+    }
+    .header-name{
+        padding-top: 0;
+    }
+    &-addreses{
+        z-index: 10000;
+        ul{
+            @include dis-flex(row);
+            list-style-type: none;
+            li{
+                margin: 0 20px;
+                a{
+                    transition: color .6s ease;
+                    color: $color-secondary;
+                    &:hover{
+                        color: $color-primary;
+                    }
+                    i{
+                        font-size: 4vw;
+
+                        @media only screen and (max-width:550px){
+                            font-size: 6vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        opacity: 1;
+        font-family: $sahel;
+        color: $color-secondary;
+        font-size: 1.5vw;
+        text-shadow: 0 0 3px $bg-color;
+        z-index: 2;
+
+        @media only screen and (max-width:750px){
+            font-size: 3vw;
+        }
+    }
+}

@@ -1,0 +1,387 @@
+.bg-about-us{
+    background: linear-gradient( to bottom ,rgba($color-black,.2),rgba($color-black,.4)) , url('../images/bg-about-us.jpg') center;
+    background-size: cover;
+
+.header-2{
+    height: 20vh; 
+.h-about-us{
+    height: 100%;
+}
+}
+
+
+.our-master-chef{
+    transform: translateY(3vh);
+    @include dis-flex(row);
+    font-family: $nastaliq;
+    color: $color-primary;
+    font-size: 6vw;
+    word-spacing: 1vw;
+    
+    @media only screen and (max-width:580px){
+        font-size: 9vw;
+    }
+}
+
+
+.masters-chef{
+    @include dis-flex(row);
+    justify-content: space-around;
+    margin-top: 5vh;
+    height: 75vh;
+    margin-bottom: 5vh;
+
+    @media only screen and (max-width:850px) {
+        @include dis-flex(column);
+        height: 75vh+75vh+75vh;
+        justify-content: space-around;
+    }
+    .master-chef{
+        cursor: pointer;
+        padding: 15px;
+        width: 25%;
+        height: 95%;
+        background-color: rgba($bg-menu-right,0);
+        color: $color-secondary;
+        border: 10px solid $color-primary;
+        border-bottom: 10px solid $color-primary-2;
+        border-right: 10px solid $color-primary-2;
+        transition: box-shadow .8s ease , backdrop-filter .4s ease;
+        backdrop-filter: blur(20px);
+
+        @media only screen and (max-width:850px){
+            height: 30%;
+            width: 90%;
+        }
+        &:hover{
+            box-shadow: 0 0 25px rgba($color-primary,.9);
+            backdrop-filter: blur(0px);
+        }
+        &-title{
+            @include dis-flex(row);
+            letter-spacing: .3vw;
+            font-family: $sahel;
+            font-size: 2vw;
+            height: 10%;
+            margin-bottom: 5%;
+
+            @media only screen and (max-width:850px){
+                font-size: 3vw;
+            }
+            @media only screen and (max-width:425px){
+                font-size: 4vw;
+                height: 7%;
+            }
+            @media only screen and (max-width:275px){
+                font-size: 6vw;
+                height: 7%;
+            }
+        }
+        &-img{
+            width: 100%;
+            height: 45%;
+            @include dis-flex(row);
+
+            @media only screen and (max-width:850px){
+                height: 47%;
+            }
+        }
+        &-name{
+            transform: translateY(4%);
+            @include dis-flex(row);
+            font-family: $sahel;
+            font-size: 1.5vw;
+            height: 10%;
+            color: $color-primary;
+
+            @media only screen and (max-width:850px){
+                font-size: 2vw;
+                height: 5%;
+            }
+            @media only screen and (max-width:425px){
+                font-size: 4vw;
+                height: 6%;
+            }
+            @media only screen and (max-width:275px){
+                font-size: 6vw;
+                height: 6%;
+            }
+        }
+        &-about{
+            display: flex;
+            align-items: center;
+            font-family: $sahel;
+            font-size: .9vw;
+            height: 35%;
+            text-align: justify;
+            text-indent: 5%;
+
+            @media only screen and (max-width:850px){
+                font-size: 1.5vw;
+            }
+            @media only screen and (max-width:425px){
+                font-size: 2.8vw;
+            }
+            @media only screen and (max-width:275px){
+                font-size: 3.2vw;
+            }
+        }
+    }
+    .master-chef-left{
+        border-radius: 1em 3em 1em;
+
+        @media only screen and (max-width:850px){
+            border-radius: 3em;
+        }
+        img{
+            border-radius: 1em 2em 1em;
+            width: 100%;
+            height: 100%;
+
+            @media only screen and (max-width:850px){
+                border-radius: 3em;
+                width: 70%;
+            }
+        }
+    }
+    .master-chef-right{
+        border-radius: 3em 1em 3em;
+
+        @media only screen and (max-width:850px){
+            border-radius: 3em;
+        }
+        img{
+            border-radius: 2em 1em .5em .5em;
+            width: 100%;
+            height: 100%;
+
+            @media only screen and (max-width:850px){
+            border-radius: 3em;
+            width: 70%;
+        }
+        }
+    }
+    .master-chef-center{
+        border-radius: 3em;
+
+        @media only screen and (max-width:850px){
+            border-radius: 3em;
+        }
+        img{
+            border-radius: 2em;
+            width: 100%;
+            height: 100%;
+
+            @media only screen and (max-width:850px){
+                border-radius: 3em;
+                width: 70%;
+            }
+        }
+    }
+}
+
+
+.question{
+    @include dis-flex(row-reverse);
+    justify-content: space-around;
+    height: 90vh;
+    width: 100%;
+    position: relative;
+
+    @media only screen and (max-width:850px){
+        height: 55vh*2;
+        @include dis-flex(column);
+        justify-content: space-around;
+    }
+    &-checkbox{
+        z-index: 2;
+        @include dis-flex(row);
+        width: 30%;
+        height: 100%;
+
+        @media only screen and (max-width:850px){
+            width: 80%;
+            height: 30%;
+        }
+        .neumorphism_toggles{
+            position: relative;
+            width: 100%;
+            height: 85%;
+            @include dis-flex(column);
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 10px 10px 15px rgba($color-primary,.7),
+            -10px -10px 15px rgba($color-secondary,.7);
+            border-radius: 20px;
+            font-size: 0;
+
+            @media only screen and (max-width:850px){
+                @include dis-flex(row-reverse);
+                height: 100%;
+            }
+        }
+        .neumorphism_toggles > input[type=checkbox].neumorphism{
+            position: relative;
+            -webkit-appearance: none;
+            width: 90%;
+            height: 43%;
+            margin: 1vw;
+            background-color: rgba($bg-color,.5);
+            box-shadow: 10px 10px 15px rgba($color-black,.5),
+            -10px -10px 15px rgba($color-black,.4),
+            inset 0 0 15px rgba($color-secondary,.3),
+            inset -10px -10px 15px rgba($color-black,.6);
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            @media only screen and (max-width:850px){
+                width: 46%;
+                height: 90%;
+            }
+            &::before{
+                color: $color-secondary;
+                font-weight: 900;
+                font-size: 5vw;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                transition: all .3s ease-in-out;
+
+                @media only screen and (max-width:500px){
+                    font-size: 9vw;
+                }
+            }
+            &:checked{
+                background: rgba($color: $bg-color, $alpha: .8);
+                box-shadow: 0 0 15px rgba($color-black,.5),
+                0 0 15px rgba($color-black,.7),
+                inset 10px 10px 15px rgba($color-secondary,.1),
+                inset -10px -10px 15px rgba($color-secondary,.1);
+            }  
+            &:checked::before{
+                color: $color-primary;
+            }     
+        }
+    }
+    &-explanation{
+        z-index: 2;
+        width: 50%;
+        height: 80%;
+        backdrop-filter: blur(20px);
+        padding:4%;
+        border-radius: 3em 1em 3em;
+        border: 2px dashed $color-primary;
+        box-shadow: 10px 10px 15px rgba($color-primary,.7),
+        -10px -10px 15px rgba($color-secondary,.7);
+        @include dis-flex(column);
+
+        @media only screen and (max-width:850px){
+            width: 90%;
+            height: 50%;
+        }
+        @media only screen and (max-width:500px){
+            height: 45%;
+        }
+        &-title{
+            @include dis-flex(row);
+            color: $color-primary;
+            font-size: 4vw;
+            height: 30%;
+            font-family: $nastaliq;
+
+            @media only screen and (max-width:850px){
+                font-size: 4vw;
+            }
+            @media only screen and (max-width:500px){
+                font-size: 6.5vw;
+            }
+        }
+        &-text{
+            @include dis-flex(row);
+            width: 100%;
+            color: $color-secondary;
+            font-family: $sahel;
+            word-spacing: 1vh;
+            font-size: 1vw;
+            text-align: justify;
+            height: 50%;
+            text-indent: 5%;
+
+            @media only screen and (max-width:850px){
+                font-size: 1.5vw;
+            }
+            @media only screen and (max-width:500px){
+                font-size: 2.5vw;
+            }
+        }
+        &-submit{
+            @include dis-flex(row);
+            width: 100%;
+            height: 20%;
+            .btn-question-submit{
+                @extend .resevation-btn;
+                color: $color-primary;
+
+                @media only screen and (max-width:500px){
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+}
+.footer-2{
+    position: relative;
+    height: 65vh;
+    @include dis-flex(column);
+    justify-content: space-around;
+    
+    .header-name{
+        padding-top: 0;
+    }
+    &-addreses{
+        z-index: 10000;
+        ul{
+            @include dis-flex(row);
+            list-style-type: none;
+            li{
+                margin: 0 20px;
+                a{
+                    transition: color .6s ease;
+                    color: $color-secondary;
+                    &:hover{
+                        color: $color-primary;
+                    }
+                    i{
+                        font-size: 4vw;
+
+                        @media only screen and (max-width:550px){
+                            font-size: 6vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        opacity: 1;
+        font-family: $sahel;
+        color: $color-secondary;
+        font-size: 1.5vw;
+        text-shadow: 0 0 3px $bg-color;
+        z-index: 2;
+
+        @media only screen and (max-width:750px){
+            font-size: 3vw;
+        }
+    }
+    .wave-2{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+}
